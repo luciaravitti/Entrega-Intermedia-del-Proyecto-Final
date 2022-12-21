@@ -1,0 +1,20 @@
+{% extends "app/padre.html" %}
+
+{%load static %}
+
+{%block titulo %} 
+<h1>FORMULARIOS DE ENTRADAS</h1>
+{% endblock %} 
+
+{%block contenido_que_cambia %} 
+<form action="{% url 'entradaFormulario' %}" method="POST"> {% csrf_token %}
+
+    <p> Nombre del plato: <input type="text" name="nombre"></p>
+    <p> Vegano: <input type="number" name="vegano"></p>
+    <p> Cantidad de personas: <input type="text" name="cantidad_personas"></p>
+
+    <input type="submit" value="Guardar Entrada" >
+
+</form>
+
+{% endblock %} 

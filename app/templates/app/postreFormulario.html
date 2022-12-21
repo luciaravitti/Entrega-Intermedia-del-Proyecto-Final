@@ -1,0 +1,25 @@
+{% extends "app/padre.html" %}
+
+{%load static %}
+
+{%block titulo %} 
+<h1>FORMULARIOS DE POSTRES</h1>
+{% endblock %} 
+
+{%block contenido_que_cambia %} 
+
+<h3> {{ mensaje }}</h3>
+
+<form action="{% url 'postreFormulario' %}" method="POST"> {% csrf_token %}
+    
+    <table>
+
+        {{ form.as_table }}
+
+    </table>
+
+    <input type="submit" value="Guardar Entrada" >
+
+</form>
+
+{% endblock %} 
